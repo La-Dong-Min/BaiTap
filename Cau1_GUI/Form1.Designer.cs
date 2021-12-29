@@ -40,6 +40,12 @@
             this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.checkBoxGioiTinh = new System.Windows.Forms.CheckBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNoiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btThem = new System.Windows.Forms.Button();
             this.btXoa = new System.Windows.Forms.Button();
             this.btSua = new System.Windows.Forms.Button();
@@ -142,11 +148,58 @@
             // dgvNhanVien
             // 
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colMa,
+            this.colHoTen,
+            this.colNgaySinh,
+            this.colGioiTinh,
+            this.colNoiSinh,
+            this.colDonVi});
             this.dgvNhanVien.Location = new System.Drawing.Point(12, 66);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.Size = new System.Drawing.Size(871, 347);
             this.dgvNhanVien.TabIndex = 12;
+            // 
+            // colMa
+            // 
+            this.colMa.DataPropertyName = "Ma";
+            this.colMa.HeaderText = "Mã";
+            this.colMa.Name = "colMa";
+            // 
+            // colHoTen
+            // 
+            this.colHoTen.DataPropertyName = "HoTen";
+            this.colHoTen.HeaderText = "Họ tên";
+            this.colHoTen.Name = "colHoTen";
+            this.colHoTen.Width = 200;
+            // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.DataPropertyName = "NgaySinh";
+            this.colNgaySinh.HeaderText = "Ngày sinh";
+            this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.Width = 150;
+            // 
+            // colGioiTinh
+            // 
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
+            this.colGioiTinh.HeaderText = "Giới tính";
+            this.colGioiTinh.Name = "colGioiTinh";
+            // 
+            // colNoiSinh
+            // 
+            this.colNoiSinh.DataPropertyName = "NoiSinh";
+            this.colNoiSinh.HeaderText = "Nơi sinh";
+            this.colNoiSinh.Name = "colNoiSinh";
+            this.colNoiSinh.Width = 150;
+            // 
+            // colDonVi
+            // 
+            this.colDonVi.DataPropertyName = "DonVi";
+            this.colDonVi.HeaderText = "Đơn vị";
+            this.colDonVi.Name = "colDonVi";
+            this.colDonVi.Width = 150;
             // 
             // btThem
             // 
@@ -208,6 +261,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Nhân Viên";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,6 +286,12 @@
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Button btThoat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNoiSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDonVi;
     }
 }
 
