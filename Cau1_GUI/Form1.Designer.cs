@@ -37,7 +37,7 @@
             this.tbNoiSinh = new System.Windows.Forms.TextBox();
             this.tbHoTen = new System.Windows.Forms.TextBox();
             this.cmBDonVi = new System.Windows.Forms.ComboBox();
-            this.dateTimePickerNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.dateNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.checkBoxGioiTinh = new System.Windows.Forms.CheckBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.colMa = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,13 +127,13 @@
             this.cmBDonVi.Size = new System.Drawing.Size(167, 24);
             this.cmBDonVi.TabIndex = 9;
             // 
-            // dateTimePickerNgaySinh
+            // dateNgaySinh
             // 
-            this.dateTimePickerNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerNgaySinh.Location = new System.Drawing.Point(641, 4);
-            this.dateTimePickerNgaySinh.Name = "dateTimePickerNgaySinh";
-            this.dateTimePickerNgaySinh.Size = new System.Drawing.Size(120, 22);
-            this.dateTimePickerNgaySinh.TabIndex = 10;
+            this.dateNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateNgaySinh.Location = new System.Drawing.Point(641, 4);
+            this.dateNgaySinh.Name = "dateNgaySinh";
+            this.dateNgaySinh.Size = new System.Drawing.Size(120, 22);
+            this.dateNgaySinh.TabIndex = 10;
             // 
             // checkBoxGioiTinh
             // 
@@ -209,6 +209,7 @@
             this.btThem.TabIndex = 13;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btXoa
             // 
@@ -218,6 +219,7 @@
             this.btXoa.TabIndex = 14;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btSua
             // 
@@ -249,7 +251,7 @@
             this.Controls.Add(this.btThem);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.checkBoxGioiTinh);
-            this.Controls.Add(this.dateTimePickerNgaySinh);
+            this.Controls.Add(this.dateNgaySinh);
             this.Controls.Add(this.cmBDonVi);
             this.Controls.Add(this.tbHoTen);
             this.Controls.Add(this.tbNoiSinh);
@@ -279,7 +281,7 @@
         private System.Windows.Forms.TextBox tbNoiSinh;
         private System.Windows.Forms.TextBox tbHoTen;
         private System.Windows.Forms.ComboBox cmBDonVi;
-        private System.Windows.Forms.DateTimePicker dateTimePickerNgaySinh;
+        private System.Windows.Forms.DateTimePicker dateNgaySinh;
         private System.Windows.Forms.CheckBox checkBoxGioiTinh;
         private System.Windows.Forms.DataGridView dgvNhanVien;
         private System.Windows.Forms.Button btThem;

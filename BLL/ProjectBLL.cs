@@ -17,5 +17,17 @@ namespace BLL
 
             return lstCus;
         }
+        public void NewCustomer(ProjectDTO cus)
+        {
+            dao.NewCustomer(cus);
+        }
+        public void DeleteCustomer(ProjectDTO cus)
+        {
+            dao.DeleteCustomer(cus);
+        }
+        //public void EditCustomer(ProjectDTO cus)
+        //{
+        //    dao.EditCustomer(cus);
+        //}
     }
 }

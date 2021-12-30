@@ -14,5 +14,10 @@ namespace DTO
         public bool Gender { get; set; }
         public string PlaceBirth { get; set; }
         public string IdDepartment { get; set; }
+        public Department Depart { get; set; }
+        public string Department
+        {
+            get { return Depart.Name; }
+        }
     }
 }

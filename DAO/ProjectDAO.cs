@@ -37,6 +37,30 @@ namespace DAO
 
             }
         }
+        public void NewCustomer(ProjectDTO cus)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("insert into Employee values(@IdEmployee, @Name, @DateBirth ,@Gender, @PlaceBirth, @IdDepartment, @Department)", conn);
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", cus.IdDepartment));
+            cmd.Parameters.Add(new SqlParameter("@Name", cus.Name));
+            cmd.Parameters.Add(new SqlParameter("@DateBirth", cus.DateBirth));
+            cmd.Parameters.Add(new SqlParameter("@Gender", cus.Gender));
+            cmd.Parameters.Add(new SqlParameter("@PlaceBirth", cus.PlaceBirth));
+            cmd.Parameters.Add(new SqlParameter("@IdDepartment", cus.IdDepartment));
+            cmd.Parameters.Add(new SqlParameter("@Department", cus.Depart.IdDepartment));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public void DeleteCustomer(ProjectDTO cus)
+        {
+            SqlConnection conn = CreateConnection();
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("delete from Employee where IdEmployee = @IdEmployee", conn);
+            cmd.Parameters.Add(new SqlParameter("@IdEmployee", cus.IdDepartment));
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
 

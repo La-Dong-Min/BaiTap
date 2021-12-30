@@ -1,4 +1,5 @@
-﻿using DAO;
+﻿using BLL;
+using DAO;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,33 @@ namespace Cau1_GUI
             }
         }
 
+        private void btThem_Click(object sender, EventArgs e)
+        {
+            ProjectDTO cus = new ProjectDTO();
+            if (tbMa.Text.Equals("") || tbHoTen.Text.Equals("") || tbNoiSinh.Text.Equals(""))
+            {
+                MessageBox.Show("Không bỏ trống", "Thông báo");
+            }
+            else
+            {
+                cus.IdDepartment = tbMa.Text;
+                cus.Name = tbHoTen.Text;
+                cus.DateBirth = dateNgaySinh.Value.Date.ToString();
+                cus.Gender = checkBoxGioiTinh.Checked;
+                cus.PlaceBirth = tbNoiSinh.Text;
+                cus.Depart = (Department)cmBDonVi.SelectedItem;
+                cusBLL.NewCustomer(cus);
 
+                dgvNhanVien.Rows.Add(cus.IdDepartment, cus.Name, cus.DateBirth, cus.Gender, cus.PlaceBirth, cus.IdEmployee, cus.Name);
+            }
+        }
+
+        private void btXoa_Click(object sender, EventArgs e)
+        {
+            if (this.dgvNhanVien.SelectedRows.Count > 0)
+            {
+                dgvNhanVien.Rows.RemoveAt(this.dgvNhanVien.SelectedRows[0].Index);
+            }
+        }
     }
 }
